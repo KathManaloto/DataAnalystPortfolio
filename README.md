@@ -6,7 +6,7 @@ It highlights proficiency in **SQL** and other data tools, showcasing the abilit
 
 ## 🚀Projects
 
-### 📉 [World Layoffs Analysis](./World_Layoffs)
+### 📉 [World Layoffs Analysis](./world_layoffs)
 **Status:** Ongoing project 🔄 
 - **Description:** Data cleaning and analysis of global layoffs using SQL.
 - **Contents:**
