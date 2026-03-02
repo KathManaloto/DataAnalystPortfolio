@@ -154,6 +154,24 @@ use layoffs_analytics;
 -- compared to other top industries, suggesting larger layoffs per event.
 -- 4. Cumulative percentages show that top 5 industries account for ~50–55% of all layoffs.
 
+-- 2023 HIGHLIGHTS -----------------------------------------------------------------------------------------------------
+
+-- Q: Which industries have the highest layoffs during 2023?
+SELECT 	
+		industry, 
+        SUM(total_laid_off) AS total_layoffs,
+        COUNT(*) AS layoff_events,
+        SUM(total_laid_off) * 100.0  / SUM(SUM(total_laid_off)) OVER() AS percent_total_2023
+FROM layoffs_staging2
+WHERE YEAR(`date`) = 2023 AND industry IS NOT NULL
+GROUP BY industry
+ORDER BY total_layoffs DESC;
+
+-- RESULTS / INSIGHTS:
+-- In 2023, the industries with the highest layoffs were Other (38,687; 14.6%), Retail (32,133; 12.2%), 
+-- and Consumer (30,303; 11.5%). Finance and Healthcare had more frequent layoff events (140 and 108) 
+-- but lower total layoffs, indicating smaller-scale events.
+
 -- =====================================================================================================================
 -- 6.) GEOGRAPHIC ANALYSIS
 -- =====================================================================================================================
@@ -307,7 +325,7 @@ use layoffs_analytics;
 -- 3. Other years show substantially lower totals and event counts, suggesting that the 
 -- most significant workforce reductions occurred primarily between 2022 and 2023.
 
--- Q: How did the total layoffs changed year-over-year? 
+-- Q: How did the total layoffs changed year-over-year? ----------------------------------------------------------------
 	WITH yearly_layoffs_cte AS 
     (
 		SELECT 
@@ -324,13 +342,29 @@ use layoffs_analytics;
                 (total_layoffs - LAG(total_layoffs) OVER(ORDER BY year))
 				/ LAG(total_layoffs) OVER (ORDER BY year) * 100, 
             2) AS yoy_percent_change
-    FROM yearly_layoffs_cte
+    FROM yearly_layoffs_cte;
 
 -- RESULTS / INSIGHTS:
 -- 2021 experienced an 80% decline in layoffs compared to 2020.
 -- 2022 saw the most dramatic increase, with layoffs growing by 938% year-over-year.
 -- Layoffs continued increasing in 2023, reaching the highest total in the dataset.
 -- From 2024 onward, layoffs declined consistently, indicating a possible stabilization phase.
+
+-- 2023 HIGHLIGHTS -----------------------------------------------------------------------------------------------------
+
+-- Q: Which month in 2023 has the highest layoffs?
+SELECT
+		DATE_FORMAT(`date`, '%Y-%m') AS month_year, 
+        SUM(total_laid_off) AS total_layoffs,
+        SUM(total_laid_off) * 100.0 / SUM(SUM(total_laid_off)) OVER() AS percent_total_2023
+FROM layoffs_staging2
+WHERE YEAR(`date`) = 2023
+GROUP BY month_year
+ORDER BY total_layoffs DESC;
+
+-- RESULTS / INSIGHTS:
+-- January is the peak month with 33.94% of total 2023 layoffs,
+-- followed by February and March, showing that layoffs were concentrated in Q1 2023.
 
 -- =====================================================================================================================
 -- 10.) KEY INSIGHTS SUMMARY 
@@ -345,5 +379,7 @@ use layoffs_analytics;
 --      • 2021: big drop in layoffs (-80%)
 --      • 2022: huge increase (+938%)
 --      • 2023: peak layoffs (264,320)
+--    		– Top industries: Other, Retail, Consumer
+--          – Peak month: January (33.9% of 2023 layoffs)
 --      • 2024–2026: layoffs gradually went down
 -- 7. Overall pattern: layoffs spike in certain years and industries, then slowly decrease, showing a cycle.
