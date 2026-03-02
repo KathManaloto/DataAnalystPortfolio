@@ -8,12 +8,14 @@ It highlights proficiency in **SQL** and other data tools, showcasing the abilit
 
 ### 📉 [World Layoffs Analysis](./world_layoffs)
 **Status:** Ongoing project 🔄 
-- **Description:** Data cleaning and analysis of global layoffs using SQL.
+- **Description:** Data cleaning and analysis of global layoffs using MySQL.
 - **Contents:**
   - `data/`  → raw and cleaned CSV files
-  - `sql/`   → data cleaning script
+  - `sql/`   → SQL scripts for data cleaning and EDA
   - `README.md` → project documentation
 
-**Next Steps:**
-- Perform Exploratory Data Analysis(EDA)
-- Create visualizations for trends in layoffs
+## 📌Next Steps:
+- Add visualizations for:
+  - Yearly layoffs and trends
+  - Top industries and countries
+  - Funding stage and extreme case analysis
