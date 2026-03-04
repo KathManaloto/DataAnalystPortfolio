@@ -1,21 +1,15 @@
-# 📊Data Analyst Portfolio Project Repository
+# 📊 Data Analyst Portfolio Project Repository
 
-Welcome! This repository is a collection of data analysis projects showcasing data cleaning, analysis, and visualization skills.
+This repository showcases a collection of data analysis projects, demonstrating skills in **data cleaning, analysis, and visualization**.  
+It highlights proficiency in **SQL** and other data tools, transforming raw datasets into meaningful insights and presenting findings clearly.
 
-It highlights proficiency in **SQL** and other data tools, showcasing the ability to handle raw data, transform it into meaningful information, and present findings in a clear, data-driven manner.
-
-## 🚀Projects
+## 🚀 Projects
 
 ### 📉 [World Layoffs Analysis](./world_layoffs)
-**Status:** Ongoing project 🔄 
-- **Description:** Data cleaning and analysis of global layoffs using MySQL.
+**Status:** Completed  ✅
+- **Description:** Data cleaning and analysis of global layoffs (2020–2026) using MySQL, with insights visualized in an interactive Tableau dashboard.
 - **Contents:**
   - `data/`  → raw and cleaned CSV files
   - `sql/`   → SQL scripts for data cleaning and EDA
-  - `README.md` → project documentation
-
-## 📌Next Steps:
-- Add visualizations for:
-  - Yearly layoffs and trends
-  - Top industries and countries
-  - Funding stage and extreme case analysis
+  - `visualizations/` → screenshot and Tableau Packaged Workbook (*.twbx)
+  - `README.md` → project documentation with key insights and interactive dashboard link
