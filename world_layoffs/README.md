@@ -1,15 +1,13 @@
 # 📉 World Layoffs Analysis
 
-**Status:** Ongoing 🔄️
-
 ## 🔎 Description
-- This project focuses on cleaning and analyzing a global layoffs dataset using MySQL to perform structured exploratory data analysis (EDA).
-- The analysis covers layoff events from 2020 to 2026, identifying patterns in workforce reductions and economic cycles.
+- This project involves cleaning and analyzing a global layoffs dataset (2020–2026) using MySQL to perform structured exploratory data analysis (EDA). It identifies patterns in workforce reductions and economic cycles and includes a Tableau dashboard to visualize and interpret the results.
 ---
 
 ## 🛠 Tools Used
 - MySQL (CTEs, Window Functions, Aggregations)
 - CSV Dataset
+- Tableau
 ---
 
 ## 🗃️ Project Structure
@@ -19,6 +17,9 @@
 - `sql/` → SQL scripts for data cleaning and exploratory analysis
   -  `layoffs_data_cleaning.sql`
   -  `layoffs_exploratory_data_analysis.sql`
+- `visualizations/` → screenshots and Tableau Packaged Workbook (*.twbx)
+  - `layoffs_visualization.twbx`
+  - `dashboard_preview.png`
 - `README.md` → this file with project documentation
 ---
 
@@ -38,7 +39,6 @@ After cleaning:
 - Removed: 705 records
 
 > SQL script: 📝 `sql/layoffs_data_cleaning.sql`
-
 ---
 
 ## 📊 Exploratory Data Analysis (EDA)
@@ -69,12 +69,20 @@ After cleaning:
 - Overall pattern: layoffs spike in certain years and industries, then slowly decrease, showing a cycle.
 --- 
 
-## 🚀 Next Steps
+##  📈 Visualizations
 
-- Add visualizations to complement SQL EDA:
-  - Trend lines for yearly layoffs
-  - Bar charts for top industries and countries
-  - Visuals for funding stage and extreme cases
+**I used Tableau to create a comprehensive Dark Mode dashboard that translates the SQL-cleaned data into actionable insights.**
+
+### ✨ Interactive Features & Charts:
+
+- Yearly Layoff Trends: A line chart identifying the significant 938% spike in 2022 and the 2023 peak of 264,320 layoffs.
+- Global Distribution: A geographic map visualizing the United States as the primary epicenter of workforce reductions.
+- Industry Impact: A treemap showcasing that the Top 3 industries (Retail, Hardware, and Other) account for 46% of total layoff volume.
+- Company Volume: A horizontal bar chart ranking the top 10 most affected companies, led by major tech firms like Amazon and Intel.
+### [🔗 Live Interactive Dashboard](https://public.tableau.com/views/GlobalLayoffsAnalysis2020-2026/Dashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+[![Dashboard Dark Mode](visualizations/dashboard_preview.png)](https://public.tableau.com/views/GlobalLayoffsAnalysis2020-2026/Dashboard?:language=en-US)
+
+---
 
 ## 📌 Dataset Source
 - Global layoffs dataset obtained from: [Kaggle: Layoffs 2022](https://www.kaggle.com/datasets/swaptr/layoffs-2022)
