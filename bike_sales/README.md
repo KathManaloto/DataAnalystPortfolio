@@ -55,8 +55,7 @@ After cleaning:
 
 ##  📈 Visualizations
 - Excel was used to create the dashboard using built-in charts.
-  (bike_sales_performance_dashboard_preview.png)
---
+![Bike Sales Dashboard](visualization/bike_sales_performance_dashboard_preview.png)
 
 ## 📌 Dataset Source
 - Bike Sales dataset obtained from the Excel tutorial dataset by Alex The Analyst: (https://github.com/AlexTheAnalyst/Excel-Tutorial/blob/main/Excel%20Project%20Dataset.xlsx)
