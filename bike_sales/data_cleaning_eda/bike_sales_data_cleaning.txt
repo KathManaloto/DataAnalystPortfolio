@@ -1,0 +1,69 @@
+================================================================================================================================================================
+PROJECT: Bike Sales Analysis
+SOURCE: https://github.com/AlexTheAnalyst/Excel-Tutorial/blob/main/Excel%20Project%20Dataset.xlsx
+================================================================================================================================================================
+
+DATA CLEANING
+
+1. Initial Data Audit
+   - Total Rows: 1,026 | 13 columns
+   - Columns:
+      - ID
+      - Marital Status
+      - Gender	
+      - Income	
+      - Children	
+      - Education	
+      - Occupation	
+      - Home Owner	
+      - Cars	
+      - Commute Distance
+      - Region	
+      - Age	
+      - Purchased Bike
+
+   - Observations: 
+      - Income column has incorrect data format. 
+      - Categorical Standardization Required: Several columns (Marital Status, Gender) use single-letter abbreviations. 
+        These will be expanded to full descriptors to improve readability in the final visualizations.
+      - Individual ages were recorded under Age column that could result to messy visualization. Need to create an age bracket or range to make the visualization 
+        easier to understand. 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+2. Data Preservation
+
+   - Action
+      - Created a duplicate worksheet (working_sheet) to preserve the original raw dataset.
+
+   - Purpose
+      - Ensures the raw data remains unchanged and allows safe experimentation during the cleaning process.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+3. Redundancy Removal
+
+   - Action:
+      - Use the Remove Duplicate feature of excel to delete the duplicate data. 
+
+   - Result:
+      - 26 duplicate rows deleted. 
+      - 1,001 remaining rows in the dataset. 
+
+4. Data Transformation
+
+   - a. Standardizing Categorical Values
+       - Action: 
+          - Marital Status: Replaced M -> Married and S -> Single
+	  - Gender        : Replaced M -> Male    and F -> Female
+	
+       - Purpose: 
+          - Full words will make the dashboard more intuitive.
+
+   - b. Formatting Income
+       - Action: 
+          - Change the data type of Income to Currency and remove decimal places. 
+
+   - c. Age Grouping
+       - Action:
+	  - Created an Age_Bracket column and used if statements to categorize the age under age column.
+             - Under 31     -> Young Adult
+             - 31 - 54      -> Middle Age
+             - 55 and older -> Senior

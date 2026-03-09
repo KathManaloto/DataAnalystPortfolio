@@ -1,0 +1,49 @@
+================================================================================================================================================================
+PROJECT: Bike Sales Analysis
+SOURCE: https://github.com/AlexTheAnalyst/Excel-Tutorial/blob/main/Excel%20Project%20Dataset.xlsx
+================================================================================================================================================================
+
+DATA EXPLORATION AND VISUALIZATION
+
+1. Data Profiling
+    - No. of rows after data cleaning: 1000 
+    - No. of columns: 13
+    - Data Integrity: All duplicates were removed, and null values were handled during the initial cleaning phase in Excel.
+
+2. Income & Gender Analysis
+    - Actions:
+       - Created a pivot table to compare the average income of purchasers vs. non-purchasers, segmented by gender.
+       - Then, used a clustered bar chart to compare the results. 
+
+    - Key Insights: 
+       - Customers who purchased a bike consistently show a higher average income compared to those who didn’t.
+       - In the given dataset, Male customers have higher average income than Female customers in both bike ‘purchaser’ and ‘non-purchaser’ categories.
+
+3. Commute Distance vs. Bike Purchase Analysis
+    - Actions:
+       - Analyzed purchase volume against commute distance using a smooth line chart. 
+       - Then, used a smooth line chart for visualization. 
+ 
+    - Key Insights:
+       - It is evident that customers with the shortest commute distances have the highest bike sales volume, suggesting bikes are primarily used 
+          for short-distance commuting rather than long-distance travel.
+       - Bike sales drop off significantly as commute distance increases, especially at the "More than 10 Miles" mark.
+       - The number of bike purchasers in that mark is 2x smaller than non-purchasers, indicating that most people in that demographic are not interested 
+          in the product, except perhaps for those who use it for exercise.
+
+4. Age Demographic Analysis
+    - Actions:
+       - Categorized ages into "Young Adult," "Middle Age," and "Senior" brackets.
+       - Generated a pivot table utilizing the age brackets and determined the bike volume purchased per age bracket.
+       - Then, used a line chart for visualization. 
+
+    - Key Insights:
+       - It is conspicuously clear that the Middle Age demographic dominates the dataset. With 383 bike purchases, this group outperforms Young Adults by 
+          nearly 10x and Seniors by over 6x in total sales volume.
+
+5. Bike Purchases by Region
+    - Actions:
+       - Horizontal bar chart comparing sales volume across North America, Europe, and the Pacific.
+
+    - Key Insights:
+       - While North America has the highest volume of customers, the Pacific region shows the highest conversion rate, with more people buying bikes than not.
