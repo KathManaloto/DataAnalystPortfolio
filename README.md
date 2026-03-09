@@ -1,6 +1,7 @@
 # 📊 Data Analyst Portfolio Project Repository
 
 This repository showcases a collection of data analysis projects, demonstrating skills in **data cleaning, analysis, and visualization**.  
+
 It highlights proficiency in **SQL** and other data tools, transforming raw datasets into meaningful insights and presenting findings clearly.
 
 ## 🚀 Projects
