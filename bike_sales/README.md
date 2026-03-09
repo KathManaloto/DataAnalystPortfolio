@@ -12,13 +12,13 @@
   - `bike_sales_data_cleaning.txt`
   - `bike_sales_eda.txt`
 -`visualization/` → screenshot of the Bike Sales Performance Dashboard
-  - `Bike Sales Performance Dashboard Preview.png`
+  - `bike_sales_performance_dashboard_preview.png`
   - Note: The actual dashboard is saved in the same xlsx file from the data folder (`bike_sales_dataset.xlsx`).
 - `README.md` → this file with project documentation
---
+---
 
 ## 🧹 Data Cleaning (Excel)
-**Key steps performed: **
+**Key steps performed:**
 1. Conducted initial Data Audit.
 2. Data Preservation
 3. Redundancy Removal
@@ -51,11 +51,12 @@ After cleaning:
 - The Middle Age demographic dominates bike purchases in the dataset. With 383 bike purchases, this group outperforms Young Adults by nearly 10x and Seniors by over 6x in total sales volume.
 - North America accounts for over 50% of the total customer population, with nearly half (43%) of that segment purchasing a bike.
 - While Europe and Pacific have lower total volumes, the Pacific region shows the highest engagement, with more bike purchasers (113) than non-purchasers (79). 
---
+---
 
 ##  📈 Visualizations
 - Excel was used to create the dashboard using built-in charts.
 ![Bike Sales Dashboard](visualization/bike_sales_performance_dashboard_preview.png)
+---
 
 ## 📌 Dataset Source
 - Bike Sales dataset obtained from the Excel tutorial dataset by Alex The Analyst: (https://github.com/AlexTheAnalyst/Excel-Tutorial/blob/main/Excel%20Project%20Dataset.xlsx)
