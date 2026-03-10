@@ -52,7 +52,7 @@ DATA CLEANING
    - a. Standardizing Categorical Values
        - Action: 
           - Marital Status: Replaced M -> Married and S -> Single
-	  - Gender        : Replaced M -> Male    and F -> Female
+	      - Gender        : Replaced M -> Male    and F -> Female
 	
        - Purpose: 
           - Full words will make the dashboard more intuitive.
@@ -63,7 +63,7 @@ DATA CLEANING
 
    - c. Age Grouping
        - Action:
-	  - Created an Age_Bracket column and used if statements to categorize the age under age column.
+	      - Created an Age_Bracket column and used if statements to categorize the age under age column.
              - Under 31     -> Young Adult
              - 31 - 54      -> Middle Age
              - 55 and older -> Senior
