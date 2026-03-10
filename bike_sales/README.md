@@ -55,6 +55,7 @@ After cleaning:
 
 ##  📈 Visualizations
 - Excel was used to create the dashboard using built-in charts.
+- The actual dashboard is saved in the same xlsx file from the data folder (bike_sales_dataset.xlsx).
 ![Bike Sales Dashboard](visualization/bike_sales_performance_dashboard_preview.png)
 ---
 
