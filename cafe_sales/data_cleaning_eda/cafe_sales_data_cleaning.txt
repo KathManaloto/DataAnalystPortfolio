@@ -1,0 +1,218 @@
+================================================================================================================================================================
+PROJECT: Cafe Sales 2023 Analysis
+SOURCE: https://www.kaggle.com/datasets/ahmedmohamed2003/cafe-sales-dirty-data-for-cleaning-training
+================================================================================================================================================================
+
+DATA CLEANING 
+
+Data Overview
+
+- Total rows: 10,000
+- Columns: 
+   - Transaction ID	
+   - Item	
+   - Quantity	
+   - Price Per Unit	
+   - Total Spent	
+   - Payment Method	
+   - Location	
+   - Transaction Date
+
+Observations: 
+- Transaction ID 
+   - Appears clean; no issues found
+- All other columns (Item - Transaction Date)
+   - Contain irregular entries such as:
+      - 'UNKNOWN'
+      - 'ERROR' 
+      - blank values 
+
+Impact
+- These inconsistent representations of missing data may lead to:
+   - Calculation errors
+   - Incorrect aggregations
+   - Issues in filtering or grouping
+   - Problems during date or numerical analysis
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Step 1: Backup Raw Data
+
+Action
+- Created a duplicate worksheet (working_sheet) to preserve the original raw dataset.
+
+Purpose
+- Ensures the raw data remains unchanged and allows safe experimentation during the cleaning process.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Step 2: Remove Duplicates
+
+Actions: 
+- Checked 'Transaction ID' column for duplicates values
+   - No duplicates detected.
+- Checked for duplicate records across all columns using Excel's Remove Duplicates feature. 
+   - No duplicate rows found.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Step 3: Standardize Missing Values (Blanks, "UNKNOWN", "ERROR")
+
+Issue
+- Missing or invalid data appeared in multiple formats.
+
+Actions: 
+- Standardized all missing/invalid entries to blank cells.	
+
+Replacements performed:
+- "UNKNOWN" → Blank
+   - 1,634 replacements
+- "ERROR" → Blank
+   - 1,622 replacements
+
+Purpose
+- Ensures consistent handling of missing data during analysis and calculations.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Step 4: Standardize Text and Formats
+
+Texts Standardization
+- Applied TRIM and PROPER functions to the following columns:
+   - Item
+   - Payment Method
+   - Location
+
+- Purpose
+   - Remove extra spaces
+   - Ensure consistent capitalization
+
+Numeric Standardization
+- Set appropriate number formats to ensure accurate calculations:
+   - Price Per Unit → Currency format
+   - Total Spent → Currency format
+   - Quantity → Number format
+
+Date Standardization
+- Applied Short Date format to Transaction Date
+
+- Purpose
+   - Enables filtering and time-series analysis.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Step 5: Handling Missing Data (Blank Values)
+
+Price Per Unit Column
+
+- Issue
+   - Identified 533 blank values in the Price Per Unit column.
+
+- Actions
+   - Established Standard Prices
+      - Created a Pivot Table to determine the standard price for each item using existing valid records.
+   
+   - Filled Missing Prices by Item
+      - Populated missing values using the Pivot Table reference. 
+      - Count of Rows filled:
+         - Cake → 54 
+         - Coffee → 57
+         - Cookie → 66
+         - Juice → 61
+         - Salad → 66
+         - Sandwich → 49
+         - Smoothie → 60
+         - Tea → 66
+
+   - Calculated Prices for Unknown Items
+      - For rows where Item was blank (48 rows):
+	 - Price Per Unit was calculated using: Price Per Unit = Total Spent / Quantity
+
+   - Finalize Values
+      - Copied the entire Price Per Unit column and pasted it as values to replace formulas with static values.
+
+- Result
+   - Initial blanks: 533
+   - Remaining blanks: 6
+
+
+Quantity Column
+
+- Issue
+   - Identified 479 blank values in the Quantity column.
+
+- Action
+   - Calculated the missing quantity values using available Price Per Unit and Total Spent data (456 rows).
+   - Formula used: 
+      - Quantity = Total Spent / Price Per Unit
+   - Finalize Values
+      - Copied the entire Quantity column and pasted it as values to replace formulas with static values.
+
+- Purpose
+   - Since Total Spent = Quantity × Price Per Unit, the missing quantity can be derived by dividing Total Spent by Price Per Unit.
+
+- Result
+   - Initial blanks: 479
+   - Remaining blanks: 23
+      - (These rows could not be calculated due to missing Price Per Unit or Total Spent values.)
+
+
+Total Spent Column
+
+- Issue
+   - Identified 502 blank values in the Total Spent column.
+
+- Action
+   - Calculated the missing Total Spent values using available Quantity and Price Per Unit data (479 rows):
+   - Formula used: 
+      - Total Spent = Quantity × Price Per Unit
+   - Finalize Values
+      - Copied the entire Total Spent column and pasted it as values to replace formulas with static values. 
+
+- Result
+   - Initial blanks: 502
+   - Remaining blanks: 23
+      - (These rows could not be calculated due to missing Quantity or Price Per Unit values.)
+
+Item Column
+
+- Issue
+   - Identified 969 blank values in the Item column.
+
+- Action
+   - Item values were inferred when Price Per Unit uniquely identified an item.
+   - Unique price mappings used:
+      1   → Cookie (121 rows filled)
+      1.5 → Tea  (118 rows filled)
+      2   → Coffee (126 rows filled)
+      5   → Salad (124 rows filled)
+   - Rows with ambiguous prices (3 and 4) were labeled as "Unknown Item".
+
+- Result
+   - Initial blanks: 969
+   - Populated: 489 blank values using unique prices
+   - Unknown Item: 480 blanks values were labeled as "Unknown Item"
+
+- Note on Ambiguity: Since Cake/Juice share the $3.00 price point and Sandwich/Smoothie share $4.00, 
+these were labeled as 'Unknown Item' to avoid misrepresenting product-specific sales trends in the final dashboard.  
+
+Transaction Date Column
+
+- Issue
+   - Identified 460 blank values in the Transaction Date Column.
+
+- Action:
+   - Sorted Transaction ID and confirmed that it doesn't correlate with chronological order. 
+   - Retained 460 records for categorical analysis (Item/Price/Location) but flagged them for exclusion 
+from time-series visualizations to maintain historical accuracy.
+
+Payment Method and Location Columns
+- Action:
+   - Retained blank values in the Payment Method and Location columns rather than imputing "guessed" data.
+
+- Reasoning: 
+   - To maintain the original integrity of the transaction records
+   - These blank values will be excluded from specific categorical charts.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Step 6: Final Cleanup Steps
+
+Actions
+- Delete rows with missing Total Spent and Price Per Unit (3 rows)
+- Impute Price Per Unit for rows with only Total Spent (Quantity assumed = 1)
+- Remove rows with Price Per Unit but missing both Quantity and Total Spent (20 rows)
