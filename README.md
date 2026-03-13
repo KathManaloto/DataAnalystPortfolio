@@ -27,4 +27,19 @@ It highlights proficiency in **SQL** and other data tools, transforming raw data
     - `bike_sales_performance_dashboard_preview.png`
     - Note: The actual dashboard is saved in the same xlsx file from the data folder (`bike_sales_dataset.xlsx`).
   - `README.md` → this file with project documentation
+
+### ☕ [Cafe Performance Overview 2023](./cafe_sales)
+**Status:** Completed  ✅
+- **Description:** An end-to-end analysis of a 10,000-row cafe sales dataset from 2023. The analysis identifies key business drivers, including monthly revenue trends and sales volume fluctuations throughout the year.
+- **Contents:**
+  - `data/` → raw dataset (csv file) and cleaned dataset (xlsx file)
+    - `cafe_sales_dataset.csv`
+    - `cafe_sales_dataset.xlsx`
+  - `data_cleaning_eda/` → documentation of data cleaning and EDA (txt files)
+    - `cafe_sales_data_cleaning.txt`
+    - `cafe_sales_eda.txt`
+  - `visualization`
+    - `cafe_sales_visualization_tableau.twbx`
+    - `dashboard_preview.png`
+  - `README.md` → this file with project documentation
   
