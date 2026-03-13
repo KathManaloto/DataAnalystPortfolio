@@ -1,4 +1,4 @@
-# ☕ Cafe Sales Analysis (2023 Dataset)
+# ☕ Cafe Performance Overview: 2023
 
 ## 🧾 Description
 - This project provides an end-to-end analysis of a 10,000-row cafe sales dataset from 2023. The analysis identifies key business drivers, including monthly revenue trends and sales volume fluctuations throughout the year.
