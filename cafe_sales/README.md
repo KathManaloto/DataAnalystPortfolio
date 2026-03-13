@@ -188,7 +188,7 @@ Phase 2: SALES & TREND EXPLORATION
       - A large portion of transactions (31%) have missing payment method data, suggesting a data quality issue.
         
 ##  📈 Visualizations
-### [🔗 Live Interactive Dashboard](https://public.tableau.com/views/GlobalLayoffsAnalysis2020-2026/Dashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+### [🔗 Live Interactive Dashboard](https://public.tableau.com/views/cafe_sales_visualization/Dashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 [![Dashboard](visualization/dashboard_preview.png)](https://public.tableau.com/views/cafe_sales_visualization/Dashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 ---
