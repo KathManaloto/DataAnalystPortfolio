@@ -162,7 +162,7 @@ ORDER BY company;
 -- Check for entries containing the word 'copy' (possible duplicates)
 SELECT DISTINCT *
 FROM layoffs_staging2
-WHERE company LIKE '%copy%';
+WHERE company LIKE '%loop%';
 
 -- Remove ' copy' suffix from company names (data entry duplication issue)
 -- Affected rows: 5
@@ -192,6 +192,18 @@ WHERE company IN ('Cult.fit', 'Curefit');
 UPDATE layoffs_staging2
 SET company = 'Kape Technologies'
 WHERE company = 'Kape';
+
+-- Standardize company names: 'Loop' and 'LOOP' refer to the same company; 
+-- Update them as 'Loop' - official company name
+UPDATE layoffs_staging2
+SET company = 'Loop'
+WHERE company = 'LOOP';
+
+-- Standardize company names: '7shifts' and '7Shifts' refer to the same company; 
+-- Update them as '7shifts' - official company name
+UPDATE layoffs_staging2
+SET company = '7shifts'
+WHERE company = '7Shifts';
 
 -- Standardize company names: 'Mr Yum' and 'Mr. Yum' pertain to the same company. 
 -- Update them as 'Mr Yum'.

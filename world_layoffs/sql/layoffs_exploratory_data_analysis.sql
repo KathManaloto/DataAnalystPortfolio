@@ -83,7 +83,11 @@ use layoffs_analytics;
 	 SELECT 
 		company AS company_name, 
 		COUNT(company) AS layoff_events,
-		SUM(total_laid_off) AS total_layoffs
+		SUM(total_laid_off) AS total_layoffs,
+        SUM(total_laid_off) / (SUM(SUM(total_laid_off)) OVER()) *100 AS pc_total,
+		ROUND(SUM(SUM(total_laid_off)) OVER(ORDER BY SUM(total_laid_off) DESC
+				ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) * 100.0
+				/ SUM(SUM(total_laid_off)) OVER(), 2) AS pc_cum_total
 	 FROM layoffs_staging2
 	 GROUP BY company
 	 ORDER BY total_layoffs DESC, layoff_events DESC
