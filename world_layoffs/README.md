@@ -80,7 +80,7 @@ After cleaning:
 - Industry Impact: A treemap showcasing that the Top 3 industries (Retail, Hardware, and Other) account for 34.59% of total layoff volume.
 - Company Volume: A horizontal bar chart ranking the top 5 most affected companies, led by major tech firms like Amazon and Intel.
 ### [🔗 Live Interactive Dashboard](https://public.tableau.com/views/GlobalLayoffsAnalysis2020-2026/DLayoffsOverview?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
-[![Dashboard](visualizations/dashboard_preview.png)](https://public.tableau.com/views/GlobalLayoffsAnalysis2020-2026/DLayoffsOverview?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+[![Dashboard](visualization/dashboard_preview.png)](https://public.tableau.com/views/GlobalLayoffsAnalysis2020-2026/DLayoffsOverview?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 ---
 
 ## 📌 Dataset Source
