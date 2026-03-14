@@ -71,17 +71,16 @@ After cleaning:
 
 ##  📈 Visualizations
 
-**I used Tableau to create a comprehensive Dark Mode dashboard that translates the SQL-cleaned data into actionable insights.**
+**I used Tableau to create a comprehensive dashboard that translates the SQL-cleaned data into actionable insights.**
 
 ### ✨ Interactive Features & Charts:
 
 - Yearly Layoff Trends: A line chart identifying the significant 938% spike in 2022 and the 2023 peak of 264,320 layoffs.
 - Global Distribution: A geographic map visualizing the United States as the primary epicenter of workforce reductions.
-- Industry Impact: A treemap showcasing that the Top 3 industries (Retail, Hardware, and Other) account for 46% of total layoff volume.
-- Company Volume: A horizontal bar chart ranking the top 10 most affected companies, led by major tech firms like Amazon and Intel.
-### [🔗 Live Interactive Dashboard](https://public.tableau.com/views/GlobalLayoffsAnalysis2020-2026/Dashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
-[![Dashboard Dark Mode](visualizations/dashboard_preview.png)](https://public.tableau.com/views/GlobalLayoffsAnalysis2020-2026/Dashboard?:language=en-US)
-
+- Industry Impact: A treemap showcasing that the Top 3 industries (Retail, Hardware, and Other) account for 34.59% of total layoff volume.
+- Company Volume: A horizontal bar chart ranking the top 5 most affected companies, led by major tech firms like Amazon and Intel.
+### [🔗 Live Interactive Dashboard](https://public.tableau.com/views/GlobalLayoffsAnalysis2020-2026/DLayoffsOverview?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+[![Dashboard](visualizations/dashboard_preview.png)](https://public.tableau.com/views/GlobalLayoffsAnalysis2020-2026/DLayoffsOverview?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 ---
 
 ## 📌 Dataset Source
