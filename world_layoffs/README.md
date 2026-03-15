@@ -83,5 +83,11 @@ After cleaning:
 [![Dashboard](visualization/dashboard_preview.png)](https://public.tableau.com/views/GlobalLayoffsAnalysis2020-2026/DLayoffsOverview?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 ---
 
+## 📋 Recommendations
+
+- Since massive layoffs happened in world-class companies like Amazon and Intel, this is an opportunity for other stable sectors, such as Finance, Healthcare, and Education, to target those displaced employees from these top-tier tech firms to acquire their technical expertise at a lower-than-usual market premium.
+- Though 2026 data is partial, the 27,470 layoffs already recorded suggest it could be another major year. Consequently, companies should focus on efficiency rather than aggressive expansion.
+- USA dominates with 500k+ layoffs (nearly 70% of the total layoffs). Companies should consider diversifying their branches globally instead of concentrating them in a single market like the United States to avoid being hit too hard by the economic shock especially in US. 
+
 ## 📌 Dataset Source
 - Global layoffs dataset obtained from: [Kaggle: Layoffs 2022](https://www.kaggle.com/datasets/swaptr/layoffs-2022)
